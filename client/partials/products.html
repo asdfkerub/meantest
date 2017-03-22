@@ -1,0 +1,19 @@
+<h1>All Products</h1>
+<div id="add-product">
+<input type="text" ng-model="searchProduct" placeholder="search...">
+<h3>Add New Product</h3>
+<form>
+<label>Name:<input type="text" ng-model="newProduct.name"></label><br>
+<label>Image(url):<input type="text" ng-model="newProduct.image"></label><br>
+<label>Description:<textarea ng-model="newProduct.description"></textarea></label><br>
+<label>Initial Quantity:<input type="number" ng-model="newProduct.quantity"></label><br>
+<button ng-click="add_product(newProduct)">Add Product</button>
+</form>
+</div>
+<div id="product-archive">
+  <div class="product" ng-repeat="product in products | filter:searchProduct">
+    <img src="{{product.image}}">
+    <a href="#!/products/{{product._id}}"><p>{{product.name}}</p></a>
+    <p>({{product.quantity}}<span ng-if="product.quantity >= 1"> left</span>)</p>
+  </div>
+</div>

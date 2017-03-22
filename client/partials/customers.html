@@ -1,0 +1,20 @@
+<form>
+  <h3>Add a new customer</h3>
+  <label>Customer Name: <input type="text" ng-model="newCustomer.name"></label>
+  <button ng-click="addCustomer(newCustomer)">Add</button>
+</form>
+<hr>
+<label>Search: <input type="text" ng-model="searchCustomer"></label>
+<table>
+  <tr>
+    <th>Customer Name</th>
+    <th>Created Date</th>
+    <th>Actions</th>
+  </tr>
+  <tr ng-repeat="customer in customers | filter:searchCustomer">
+    <td>{{customer.name}}</td>
+    <td>{{customer.createdAt | date}}</td>
+    <td><button ng-click="rmCustomer(customer._id)">Remove</button></td>
+  </tr>
+
+</table>

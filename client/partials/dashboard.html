@@ -1,0 +1,28 @@
+<h1>Dashboard</h1>
+<div>
+  <div id="search-dash">
+    <input type="text" ng-model="searchProd" placeholder="Search...">
+  </div>
+  <div id="dash-prod">
+    <div class="dash-prods" ng-repeat="product in products | limitTo: limit | filter:searchProd">
+        <img src="{{product.image}}">
+        <p>{{product.name}}</p>
+        <p>({{product.quantity}}<span ng-if="product.quantity >= 1"> left</span>)</p>
+    </div>
+    <br><button ng-click="changelimit()">Show More</button>
+  </div>
+</div>
+<div>
+  <h3>Recent Orders</h3>
+  <div ng-repeat="order in orders | orderBy: 'created_at':true | limitTo: 3">
+    <p>{{order.customer.name}} purchased {{order.product.name}}... ({{dateDiff(order.createdAt)}} ago)</p>
+  </div>
+  <a href="#!/orders">show all orders</a>
+</div>
+<div>
+  <h3>New Customers</h3>
+  <div ng-repeat="customer in customers | orderBy: 'created_at':true | limitTo: 3">
+    <p>{{customer.name}} joined the store... ({{dateDiff(customer.createdAt)}} ago)</p>
+  </div>
+  <a href="#!/customers">show all customers</a>
+</div>

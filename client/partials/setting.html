@@ -1,0 +1,18 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Quantity</th>
+    <th>Description</th>
+    <th>Image</th>
+    <th>Action</th>
+  </tr>
+  <tr ng-repeat="product in products">
+    <form>
+      <td><input type"text" ng-value="product.name" ng-model="edited.name"></td>
+      <td><input type="number" ng-value="product.quantity" ng-model="edited.quantity"></td>
+      <td><textarea ng-value="product.description" ng-model="edited.description"></textarea></td>
+      <td><input type="text" ng-value="product.image" ng-model="edited.image"></td>
+      <td><button ng-click="editProduct(edited,product._id)">Edit</button><button ng-click="deleteProduct(product._id)">Remove</button></td>
+    </form>
+  </tr>
+</table>

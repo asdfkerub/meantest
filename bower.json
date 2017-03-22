@@ -1,0 +1,22 @@
+{
+  "name": "mini_mean",
+  "homepage": "https://github.com/asdfkerub/DojoAssignments",
+  "authors": [
+    "kerub <q.kerubkim@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.3",
+    "angular-route": "^1.6.3",
+    "messages": "^0.1.0"
+  }
+}
