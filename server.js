@@ -2,7 +2,7 @@ var express = require('express'),
     path = require('path'),
     bp = require('body-parser'),
     root = __dirname,
-    port = 9000,
+    port = 8000,
     app = express();
 
 app.use(express.static(path.join(root,"client")));
